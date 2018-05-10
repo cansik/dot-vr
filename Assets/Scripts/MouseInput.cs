@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ public class MouseInput : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        this.transform.position = new Vector3((Input.mousePosition.normalized.x - 0.5f) * 5f, this.transform.position.y, this.transform.position.z);
+        var normalizedMousePosition = new Vector3(Input.mousePosition.x / Screen.width, Input.mousePosition.y / Screen.height, Input.mousePosition.z);
+        this.transform.position = new Vector3((normalizedMousePosition.x - 0.5f) * 8f, (normalizedMousePosition.y - 0.5f) * 8f, this.transform.position.z);
     }
 }

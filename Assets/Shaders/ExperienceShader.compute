@@ -1,0 +1,48 @@
+﻿#pragma kernel Main
+
+#include "HLSLSupport.cginc"
+#include "../Plugins/Pcx/Shaders/Common.cginc"
+
+StructuredBuffer<float4> SourceBuffer;
+RWStructuredBuffer<float4> OutputBuffer;
+
+CBUFFER_START(Params)
+    float time;
+	float3 floatingIntensity;
+	float3 floatingSpeed;
+	float expandIndex;
+	float4 actor;
+	float minDistance;
+CBUFFER_END
+
+// t = time, p = phase, s = speed, a = amplitude
+float floating(float t, float p, float s, float a)
+{
+	return sin(s * (t + p)) * a;
+}
+
+[numthreads(128, 1, 1)]
+void Main(uint id : SV_DispatchThreadID)
+{
+    float4 pt = SourceBuffer[id];
+    half3 c = PcxDecodeColor(asuint(pt.w));
+
+	// expand
+	pt.z = lerp(0, pt.z, expandIndex);
+
+	// floating (wild)
+	pt.z += floating(time, pt.x * pt.y, floatingSpeed.z, floatingIntensity.z);
+	pt.x += floating(time, pt.y * pt.z, floatingSpeed.x, floatingIntensity.x);
+	pt.y += floating(time, pt.x * pt.z, floatingSpeed.y, floatingIntensity.y);
+
+	// act with actor
+	float3 direction = pt.xyz - actor.xyz;
+	float d = abs(length(direction));
+	float nd = min(minDistance, max(1.0 - d / minDistance, 0));
+
+	pt.xyz += (normalize(direction.xyz) * nd * minDistance);
+
+	// color
+    pt.w = asfloat(PcxEncodeColor(c));
+    OutputBuffer[id] = pt;
+}

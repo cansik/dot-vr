@@ -12,8 +12,14 @@ public class PointAnimation : MonoBehaviour
 
     [SerializeField] GameObject actor;
 
-    [SerializeField] float minDistance;
+    [SerializeField] GameObject marker;
 
+    [Range(0, 20)]
+    [SerializeField]
+    public float minDistance;
+
+    [SerializeField]
+    public bool reColorCloud = false;
 
     ComputeBuffer _pointBuffer;
 
@@ -39,11 +45,16 @@ public class PointAnimation : MonoBehaviour
         }
 
         var time = Application.isPlaying ? Time.time : 0;
-        
         var kernel = _computeShader.FindKernel("Main");
+
+        // calculate the position
+        var localPos = this.transform.InverseTransformVector(actor.transform.position - this.transform.position);
+        this.marker.transform.localPosition = localPos;
+
+        _computeShader.SetBool("ReColorCloud", reColorCloud);
         _computeShader.SetVector("Color", color);
         _computeShader.SetVector("ActiveColor", activeColor);
-        _computeShader.SetVector("Actor", actor.transform.position);
+        _computeShader.SetVector("Actor", localPos);
         _computeShader.SetFloat("Time", time);
         _computeShader.SetFloat("MinDistance", minDistance);
         _computeShader.SetBuffer(kernel, "SourceBuffer", sourceBuffer);

@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1198551754918220}
+  m_IsPrefabParent: 1
+--- !u!1 &1198551754918220
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4067172375186434}
+  - component: {fileID: 114660225422008028}
+  - component: {fileID: 114393149819424244}
+  m_Layer: 0
+  m_Name: Kraut
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4067172375186434
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1198551754918220}
+  m_LocalRotation: {x: -0.4078513, y: 0.5776308, z: 0.5776308, w: 0.4078513}
+  m_LocalPosition: {x: 1.91, y: 0.522, z: 4.8}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 46.8, z: 62.75}
+--- !u!114 &114393149819424244
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1198551754918220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9157231d7c5abd4ba9ae44871b78ed3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sourceData: {fileID: 11400002, guid: dc0b5e37e1a35d04f9b1d2c45750e941, type: 3}
+  _computeShader: {fileID: 7200000, guid: 41f8488e4a2e0d3429f3974cdacf0ba7, type: 3}
+  color: {r: 0.2603806, g: 0.4168655, b: 0.63235295, a: 0}
+  activeColor: {r: 0.9632353, g: 0, b: 0, a: 0}
+  actor: {fileID: 0}
+  marker: {fileID: 0}
+  minDistance: 5
+  reColorCloud: 0
+--- !u!114 &114660225422008028
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1198551754918220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b5900aba1767854aa98592c99eb8b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sourceData: {fileID: 11400002, guid: dc0b5e37e1a35d04f9b1d2c45750e941, type: 3}
+  _pointTint: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  _pointSize: 0.01
+  _pointShader: {fileID: 4800000, guid: 1baec256dca7c1642b87d05510e75a3f, type: 3}
+  _diskShader: {fileID: 4800000, guid: 7ebf1f15e5b03014d92704caa6c97e2e, type: 3}

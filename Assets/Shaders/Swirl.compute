@@ -12,6 +12,7 @@ CBUFFER_START(Params)
 	float4 ActiveColor;
 	float4 Actor;
 	float MinDistance;
+	bool ReColorCloud;
 CBUFFER_END
 
 [numthreads(128, 1, 1)]
@@ -25,15 +26,16 @@ void Main(uint id : SV_DispatchThreadID)
 	float nd = min(1.0, max(1.0 - d / MinDistance, 0));
 
 	// lerp correctly between colors
-	c = lerp(Color, ActiveColor, nd);
+	if(ReColorCloud)
+	{
+		c = lerp(Color, ActiveColor, nd);
+	}
 
 	// moving
 	if(d < MinDistance)
 	{
-		//direction *= -1.0;
-		//pt.xyz += direction; //* nd;
-
-		pt.xyz += (normalize(direction.xyz) * nd); 
+		pt.xyz += (normalize(direction.xyz) * nd);
+		//pt.z += sin(0.23 - Time * 1.13);
 	}
 
     pt.w = asfloat(PcxEncodeColor(c));

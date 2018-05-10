@@ -1,2 +1,2 @@
-# dream-place
+# Dot VR
 A mental VR experience.

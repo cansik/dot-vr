@@ -15,6 +15,8 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
+  - guid: 403bcb90c0dd0be47b0b8377580f6277
+    name: Pitch
   - guid: 0ca76d927b1d17f448fb63bb3a6d7d70
     name: Volume
   m_AudioMixerGroupViews:
@@ -62,13 +64,27 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: e48fd2a2238517243bcded3a8a379b24
   m_FloatValues:
+    97b06200dc3b34d46b3a40d29155fef3: 0.544
     2c9bf420489b1164fbf24c5230ceae09: 0.0571
     25e15360127b6b44aad6ca925902db22: 0.066
+    403bcb90c0dd0be47b0b8377580f6277: 1
+    77e20d906fcecde438eba079c8e6266f: 2.12
     0ca76d927b1d17f448fb63bb3a6d7d70: 0
     bb0ae343c1a07ba4d8ec79929cafb850: -9857
+    fe7fb0b39c229654a8e49b1763c080f8: 1
     f0a3b91481737c441ab4214e713831b6: -759
+    6a00f834698ca554d9b22a3e22846b33: 0
+    59f97fd4a62ef6b44b564146db9bd56b: 0.733
     03da36155327b754dbb7cb768a4ea0fd: 3.64
+    849bb7460e40b9a41bbb24e93aec636a: 40
+    b2a585e70c20f7b419a48a9befdea2f5: 3.23
+    2ac368189b9383c499ccdb1d6171d6af: 3474.757
     c167d5687f589e04489ac45a171c7d73: 0.557
     e7069529eca85f6499484c4ebc7791a5: 0
+    4fa5dd4ae8cfcbd44af1bc191006a135: 0.47000003
+    fa3bd57ae9782ed408a8755e44e490da: 0.492
     def6015cc6bfaae4e91f1cb13207e6f5: -1376
+    00153cec1dc2deb478184e733f283339: 1549
+    7c6dca5e3121847489de22aa997c5225: 0.5
+    3faea34f68cac5b4ba3251944e2aea71: 0.365
   m_TransitionOverrides: {}

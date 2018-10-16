@@ -14,7 +14,7 @@ public class ExperienceController : MonoBehaviour {
 
     public float MomentumAlpha;
 
-    EasingFloat momentum;
+    public EasingFloat momentum;
 
     public float MomentumSpeed;
 

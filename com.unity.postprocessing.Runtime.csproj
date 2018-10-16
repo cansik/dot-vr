@@ -463,6 +463,12 @@
     <None Include="Assets\SteamVR\Resources\SteamVR_Fade.shader" />
     <None Include="Assets\SteamVR\Resources\SteamVR_SphericalProjection.shader" />
     <None Include="Assets\SteamVR\readme.txt" />
+    <None Include="Assets\Unity Technologies\Recorder\Extensions\UTJ\Information.txt" />
+    <None Include="Assets\Unity Technologies\Recorder\Framework\Core\Shaders\VerticalFlipper.shader" />
+    <None Include="Assets\Unity Technologies\Recorder\Framework\Inputs\CBRenderTexture\Shaders\CopyFB.shader" />
+    <None Include="Assets\Unity Technologies\Recorder\Framework\Inputs\RenderTextureSampler\Shaders\BS4Accumulate.shader" />
+    <None Include="Assets\Unity Technologies\Recorder\Framework\Inputs\RenderTextureSampler\Shaders\BS4Normalize.shader" />
+    <None Include="Assets\Unity Technologies\Recorder\Framework\Inputs\RenderTextureSampler\Shaders\BS4SuperShader.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
